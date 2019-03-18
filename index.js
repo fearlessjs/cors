@@ -22,19 +22,19 @@ module.exports = (configs = {}) => options => {
   } = configs
 
   const cors = (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', origin)
+    res.writeHeader('Access-Control-Allow-Origin', origin)
     if (allowCredentials) {
-      res.setHeader('Access-Control-Allow-Credentials', 'true')
+      res.writeHeader('Access-Control-Allow-Credentials', 'true')
     }
     if (exposeHeaders.length) {
-      res.setHeader('Access-Control-Expose-Headers', exposeHeaders.join(','))
+      res.writeHeader('Access-Control-Expose-Headers', exposeHeaders.join(','))
     }
 
-    const preFlight = req.method === 'OPTIONS'
+    const preFlight = req.getMethod() === 'OPTIONS'
     if (preFlight) {
-      res.setHeader('Access-Control-Allow-Methods', allowMethods.join(','))
-      res.setHeader('Access-Control-Allow-Headers', allowHeaders.join(','))
-      res.setHeader('Access-Control-Max-Age', String(maxAge))
+      res.writeHeader('Access-Control-Allow-Methods', allowMethods.join(','))
+      res.writeHeader('Access-Control-Allow-Headers', allowHeaders.join(','))
+      res.writeHeader('Access-Control-Max-Age', String(maxAge))
     }
   }
 
