@@ -45,6 +45,6 @@ module.exports = (configs = {}) => options => {
     }
     : {
       ...options,
-      middlewares: [...options.middleware, cors]
+      middlewares: [...options.middlewares, cors]
     }
 }
