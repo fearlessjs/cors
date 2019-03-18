@@ -38,13 +38,17 @@ module.exports = (configs = {}) => (options = { middlewares: [] }) => {
     }
   }
 
-  return Array.isArray(options)
-    ? {
+  if (Array.isArray(options)) {
+    return {
       handlers: options,
       middlewares: [cors]
     }
-    : {
-      ...options,
-      middlewares: [...options.middlewares, cors]
-    }
+  }
+
+  const { middlewares = [] } = options
+
+  return {
+    ...options,
+    middlewares: [...middlewares, cors]
+  }
 }
