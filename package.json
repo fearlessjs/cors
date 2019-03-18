@@ -1,7 +1,7 @@
 {
   "name": "@fearless/cors",
   "description": "CORS",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Rodrigo Oler <https://github.com/rodrigooler>",
   "bugs": {
     "url": "https://github.com/fearlessjs/cors/issues"

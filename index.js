@@ -11,7 +11,7 @@ const ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 
 const MAX_AGE_SECONDS = 60 * 60 * 24
 
-module.exports = (configs = {}) => options => {
+module.exports = (configs = {}) => (options = { middlewares: [] }) => {
   const {
     origin = '*',
     maxAge = MAX_AGE_SECONDS,
