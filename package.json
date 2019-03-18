@@ -7,11 +7,21 @@
     "url": "https://github.com/fearlessjs/cors/issues"
   },
   "homepage": "https://github.com/fearlessjs/cors#readme",
+  "keywords": [
+    "cors",
+    "fearless",
+    "javascript",
+    "middleware",
+    "nodejs"
+  ],
   "license": "MIT",
   "main": "index.js",
   "private": false,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fearlessjs/cors.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
